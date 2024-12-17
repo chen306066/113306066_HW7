@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW7 Layout</title>
+    <link rel="stylesheet" href="113306066_HW7.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-panel">
+            <img src="profile.png" alt="Profile Image" style="height: 3000%">
+            <div class="photo-panel"></div>
+            <div class="text-content">
+                <section class="about-me">
+                    <div class="name-container">
+        <h2 id="name">Judy</h2>
+        <button id="edit-btn">edit</button>
+    </div>
+                    
+                    <h2>About Me</h2>
+                    <p>Hello! I'm lively and cheerful. Nice to meet you all!</p>
+                </section>
+                <section class="contact-info">
+                    <h2>Contact Info</h2>
+                    <p>Email: 113306066@nccu.edu.tw</p>
+                    <p>Phone: oooo-ooo-ooo</p>
+
+                </section>
+                <img src="NCCU.jpg" alt="NCCU Icon" class="nccu-icon">
+            </div>
+        </div>
+        <div class="right-panel">
+            <section class="education">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="entry">
+                        <span class="year">2024</span>
+                        <span class="description">National Chengchi University, MIS</span>
+                    </div>
+
+                    <div class="entry">
+                        <span class="year">now</span>
+                        <span class="description">--</span>
+                    </div>
+                    <br></br>
+
+                    <div class="entry">
+                        <span class="year">2021</span>
+                        <span class="description">Taipei Municipal High School</span>
+                    </div>
+
+                    <div class="entry">
+                        <span class="year">2024</span>
+                        <span class="description">High School Graduation</span>
+                    </div>
+                    <br></br>
+
+                    <div class="entry">
+                        <span class="year">2018</span>
+                        <span class="description">Elementary School Graduation</span>
+                    </div>
+
+                    <div class="entry">
+                        <span class="year">2021</span>
+                        <span class="description">Starting Middle School</span>
+                    </div>
+        
+
+                </div>
+            </section>
+            <section class="homework-list">
+                <h2>Homework List</h2>
+                <ul>
+                     <li>HW1- <a href="https://github.com/chen306066/HW1/blob/74e00a8033126f4499cb69d5257f3d3a3b435812/113306066%20%E6%96%BD%E4%BA%AE%E6%99%A8.pdf">github.com/chen306066/HW1</a></li>
+                     <br></br>
+
+                    <li>HW2- <a href="https://github.com/chen306066/HW2/blob/ea1bdd2ac3ad5c49c326f62691d20196c2cbc6bb/113306066%E6%96%BD%E4%BA%AE%E6%99%A8%20HW2.xlsx">github.com/chen306066/HW2</a></li>
+                    <br></br>
+
+                    <li>HW3- <a href="https://github.com/chen306066/HW3.git">github.com/chen306066/HW3</a>
+            </li>
+
+                </ul>
+            </section>
+
+            <section class="favorite-music">
+                <h2>Favorite Music</h2>
+                <div class="album-covers">
+                    <br><a href="https://www.youtube.com/watch?v=sHD_z90ZKV0"><img src="YouTube.png" alt="YouTube Icon" style= "width: 60px; height: 60px; 
+            margin-bottom: 5px;"></a></br>
+                    <br>稻香</br>
+
+
+                    <br><a href="https://www.youtube.com/watch?v=HQ_mU73VhEQ"><img src="YouTube.png" alt="YouTube Icon" style= "width: 60px; height: 60px; 
+            margin-bottom: 5px;"></a></br>
+                    <br>幾分之幾</br>
+
+
+                    <br><a href="https://www.youtube.com/watch?v=k8A3aQhOfqc"><img src="YouTube.png" alt="YouTube Icon" style= "width: 60px; height: 60px; 
+            margin-bottom: 5px;"></a></br>
+                    <br>愛情教會我們的事</br>
+
+
+                    <br><a href="https://www.youtube.com/watch?v=qX2GsMj7154"><img src="YouTube.png" alt="YouTube Icon" style= "width: 60px; height: 60px; 
+            margin-bottom: 5px;"></a></br>
+                    <br>乾杯</br>
+                
+                </div>
+                <p><button id="add-btn">add</button></p> 
+                <p class="note">These songs make me relax and forget terrible things.</p>
+            </section>
+        </div>
+    </div>
+    <script>
+        // 【編輯名稱功能】
+        const editBtn = document.getElementById('edit-btn'); // 取得按鈕
+        const nameField = document.getElementById('name');   // 取得名稱的 <h2>
+
+        editBtn.addEventListener('click', () => {
+            if (editBtn.textContent === 'edit') {
+                // 進入編輯狀態，替換為輸入框
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.value = nameField.textContent; // 預設為當前名稱
+                input.id = 'name-input';
+                nameField.textContent = '';          // 清空目前顯示的名稱
+                nameField.appendChild(input);        // 加入輸入框
+                editBtn.textContent = 'save';        // 修改按鈕文字為 save
+            } else {
+                // 保存新名稱並退出編輯狀態
+                const input = document.getElementById('name-input');
+                nameField.textContent = input.value; // 更新顯示的名稱
+                editBtn.textContent = 'edit';        // 修改按鈕文字回到 edit
+            }
+        });
+
+
+        // 【新增音樂功能】
+        document.getElementById("add-btn").addEventListener("click", function () {
+    // 創建輸入表單
+    const formContainer = document.createElement("div");
+    formContainer.id = "music-form";
+    formContainer.innerHTML = `
+        <label>音樂連結: <input type="text" id="music-link" placeholder="Enter music link"></label><br>
+        <label>音樂名稱: <input type="text" id="music-name" placeholder="Enter music name"></label><br>
+        <button id="submit-music">Submit</button>
+    `;
+
+    // 檢查是否已存在表單，避免重複創建
+    if (!document.getElementById("music-form")) {
+        document.querySelector(".favorite-music").appendChild(formContainer);
+    }
+
+    // 監聽提交按鈕
+    document.getElementById("submit-music").addEventListener("click", function () {
+        const link = document.getElementById("music-link").value.trim();
+        const name = document.getElementById("music-name").value.trim();
+
+        if (link && name) {
+            // 創建新的歌曲項目
+            const newSong = document.createElement("div");
+            newSong.innerHTML = `
+                <a href="${link}" target="_blank">
+                    <img src="YouTube.png" alt="YouTube Icon" style="width: 60px; height: 60px; margin-bottom: 5px;">
+                </a>
+                <div class="music-name">${name}</div>
+            `;
+            document.querySelector(".album-covers").appendChild(newSong);
+
+            // 移除輸入表單
+            formContainer.remove();
+        } else {
+            alert("請填寫完整的音樂名稱和連結！");
+        }
+    });
+});
+    </script>
+</body>
+</html>
