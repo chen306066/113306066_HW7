@@ -1,0 +1,143 @@
+/* General body styling */
+body {
+    background-color: #eeede1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Main container */
+.main-container {
+    display: flex;
+    background-color: #ffffff;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Left panel styling */
+.left-panel {
+    width: 330px;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    height: 1150px;
+}
+
+.photo-panel {
+    background-image: url('your-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50%;
+}
+
+.text-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.nccu-icon {
+    align-self: center;
+    margin-top: 20px;
+}
+
+/* Right panel styling */
+.right-panel {
+    width: 540px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.timeline .entry {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.homework-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.homework-list a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.homework-list a:hover {
+    color: #0056b3;
+}
+
+.album-covers {
+    display: flex;
+    flex-wrap: wrap;  /* 讓元素自動換行 */
+    gap: 10px;
+}
+
+.album-covers div {
+    position: relative;
+    width: calc(25% - 10px);  /* 每個項目占據一行的四分之一，減去間距 */
+    text-align: center; 
+    display: flex;
+    flex-direction: column; /* 讓圖示和名稱垂直排列 */
+    align-items: center; /* 使圖片和名稱居中 */
+}    
+
+.album-covers div img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+.album-covers div .music-name {
+    position: absolute;  /* 絕對定位音樂名稱 */
+    bottom: 5px;  /* 距離底部 5px */
+    right: 5px;  /* 距離右邊 5px */
+    color: black;  /* 文字顏色為白色 */
+    padding: 2px 5px;  /* 給名稱加點內邊距 */
+    font-size: 12px;  /* 可以根據需要調整文字大小 */
+    white-space: nowrap;  /* 防止名稱換行 */
+}
+
+.note {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.name-container {
+    display: flex;               
+    align-items: center;         
+    gap: 10px;                   
+}
+
+.name-container h2 {
+    margin: 0;                   
+}
+
+#edit-btn {
+    padding: 5px 10px;           
+    cursor: pointer;             
+    border: 1px solid #ccc;      
+    border-radius: 5px;          
+    background-color: #f0f0f0;   
+    color: #333;                 
+}
